@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navlinks from "./Navlinks";
+import Marquee from "./Marquee";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
