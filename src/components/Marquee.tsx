@@ -1,20 +1,31 @@
 import React from "react";
-import { title } from "process";
+import MarqueeText from "react-marquee-text";
+import "react-marquee-text/dist/styles.css";
+
+interface Headlines {
+  id: string;
+  title: string;
+}
 
 const Marquee = async () => {
   const res = await fetch("https://news-api-v2.vercel.app/api/news?limit=10");
   const data = await res.json();
-  const headLine = data.data;
+  const headLine: Headlines[] = data.data;
   console.log(headLine);
 
   return (
-    <div>
-      {headLine.map((line) => (
-        <span>
-          <span>{line.title}</span>
-          <span className="mx-4">ㆍ</span>
-        </span>
-      ))}
+    <div className="bg-red-700 text-white">
+      <div className="flex max-w-7xl mx-auto">
+        <div className="bg-red-800 py-1 px-5 font bold">সর্বশেষ</div>
+        <MarqueeText className="py-1" direction="right" duration={10}>
+          {headLine.map((line) => (
+            <span key={line.id}>
+              <span>{line.title}</span>
+              <span className="mx-4">ㆍ</span>
+            </span>
+          ))}
+        </MarqueeText>
+      </div>
     </div>
   );
 };
