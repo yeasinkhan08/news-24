@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -7,43 +8,40 @@ const Header = () => {
   });
 
   return (
-    <header className="w-full">
-      <div className="max-w-[1250px] mx-auto flex items-center justify-between py-3 px-4">
-        {/* Logo + Title */}
+    <header className="relative w-full">
+      <div className="mx-auto flex max-w-5xl items-center py-4">
+        {/* Logo + Name */}
         <div className="flex items-center gap-2">
           <Image
             src="/logo.webp"
-            alt="Bangla News 24 logo"
+            alt="Bangla News 24"
             width={40}
             height={40}
-            className="rounded-xl"
+            priority
           />
 
           <div>
-            <h2 className="text-2xl font-bold text-red-700 leading-tight">
+            <h1 className="font-serif text-2xl font-bold leading-none text-red-700">
               Bangla News 24
-            </h2>
+            </h1>
 
-            <p className="text-xs text-gray-500">{date}</p>
+            <p className="mt-1 font-serif text-xs text-gray-500">{date}</p>
           </div>
         </div>
+      </div>
 
-        {/* Sign In / Sign Out */}
-        <div className="flex items-center gap-2">
-          <button
-            type="button"
-            className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-red-700 transition"
-          >
-            সাইন ইন
-          </button>
+      {/* Top Right */}
+      <div className="absolute right-4 top-4 flex items-center gap-3">
+        <Link href="/login" className="font-serif text-sm text-gray-700">
+          লগইন
+        </Link>
 
-          <button
-            type="button"
-            className="px-4 py-2 rounded-md bg-red-700 text-sm font-medium text-white hover:bg-red-800 transition"
-          >
-            সাইন আউট
-          </button>
-        </div>
+        <Link
+          href="/signup"
+          className="rounded-md bg-red-700 px-3 py-2 font-serif text-sm font-medium text-white"
+        >
+          সাইন আপ
+        </Link>
       </div>
     </header>
   );
