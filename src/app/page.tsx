@@ -37,7 +37,7 @@ export default async function Home() {
                   {os.title}
                 </h1>
 
-                <div className="grid mt-3 grid-cols-3 gap 2">
+                <div className="grid mt-3 grid-cols-3 gap-3">
                   {os.articles.map((news) => (
                     <NewsCard key={news.id} news={news} />
                   ))}
