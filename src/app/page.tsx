@@ -48,7 +48,7 @@ export default async function Home() {
         </div>
 
         {/* most read section */}
-        <div className="clo-span-1 bg-amber-900 p-10"></div>
+        <div className="clo-span-1 p-10"></div>
       </div>
     </>
   );
