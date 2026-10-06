@@ -1,5 +1,6 @@
 import MainNews from "@/components/MainNews";
-import Marquee from "@/components/Marquee";
+// import Marquee from "@/components/Marquee";
+import MostRead from "@/components/MostRead";
 import NewsCard from "@/components/NewsCard";
 
 interface IOtherSection {
@@ -25,7 +26,6 @@ export default async function Home() {
 
   return (
     <>
-      <Marquee />
       <div className="grid grid-cols-3 max-w-7xl mx-auto mt-5">
         {/* news section */}
         <div className="col-span-2">
@@ -33,7 +33,7 @@ export default async function Home() {
           <div className=" grid gap-6 mt-5">
             {otherSections.map((os) => (
               <div key={os.curationId}>
-                <h1 className="font-bold border-b-2 pb-1 border-red-700">
+                <h1 className="font-bold border-b-2 pb-1 border-red-700 mb-3">
                   {os.title}
                 </h1>
 
@@ -48,7 +48,9 @@ export default async function Home() {
         </div>
 
         {/* most read section */}
-        <div className="clo-span-1 p-10"></div>
+        <div className="col-span-1 p-10">
+          <MostRead />
+        </div>
       </div>
     </>
   );
