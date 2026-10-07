@@ -32,14 +32,14 @@ const Header = () => {
       {/* Top Right */}
       <div className="absolute left-200 top-4 flex items-center gap-3 text-sm">
         <Link
-          href="/login"
+          href="/signin"
           className="text-sm font-medium text-neutral-700 hover:text-red-700"
         >
           লগইন
         </Link>
 
         <Link
-          href="/sign-up"
+          href="/signup"
           className="rounded-md bg-red-700 px-5 py-1 text-sm font-medium text-white hover:bg-red-800"
         >
           সাইন আপ
